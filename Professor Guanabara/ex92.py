@@ -10,8 +10,8 @@ if empregado['ctps'] != 0:
     empregado['contrato'] = int(input('Ano de contratação: '))
     empregado['salario'] = float(input('Salário: '))
     contribuicao = (empregado['contrato'] - ano_atual) * -1
-    empregado['aposentadoria'] = (35 - contribuicao) +empregado['idade']
+    empregado['aposentadoria'] = (35 - contribuicao) + empregado['idade']
 
 print('-='*30)
 for chave, valor in empregado.items():
-    print(chave, valor)
+    print(f'{chave} : {valor}')

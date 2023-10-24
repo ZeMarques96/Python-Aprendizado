@@ -1,4 +1,5 @@
 import random
+import time
 jogadores = [
     {
         'jogador': 'jogador 1',
@@ -17,16 +18,23 @@ jogadores = [
         'dado': random.randint(1,6)
     },
     ]
+
 rank_jogadores = sorted(jogadores, key=lambda jogador: jogador['dado'], reverse=True)
 
-print('Valores sorteados')
+print('Valores sorteados:')
 for jogador in jogadores:
     for chave, valor in jogador.items():
-        print(chave, valor, end= ' ')
-    print()
+        if jogador[chave] == jogador['jogador']:
+            print(valor, end=' tirou ')
+        else:
+            print(valor)
+    time.sleep(1)
 print('Ranking:')
 for jogador in rank_jogadores:
     for chave, valor in jogador.items():
-        print(chave, valor, end= ' ')
-    print()
+        if jogador[chave] == jogador['jogador']:
+            print(valor, end= ' tirou ')
+        else:
+            print(valor)
+    time.sleep(1)
 

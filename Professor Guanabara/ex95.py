@@ -31,31 +31,24 @@ while True:
     jogador['total'] = tot_gols
     jogadores.append(jogador)
     while True:
-        resposta = str(input('Deseja continuar? [S/N]'))
-        if resposta in 'Ss':
-            break
-        if resposta in 'Nn':
+        resposta = str(input('Deseja continuar? [S/N]')).upper()
+        if resposta in 'SsNn':
             break
         else:
-            print('Resposta inválida')
+            print('Responda apenas [S/N]')
     if resposta in 'Nn':
         break
 
-espaco = ' '
-espaco = len(jogadores[0]['gols'])
-for jogador in jogadores:
-    for valores in jogador.values():
-        if type(valores) is list and len(valores) > espaco:
-            espaco = len(valores)
+# TABELA
+print(f' {"cod":<5} {"nome":>6}{"gols":>14} {"total":>10}')
+for k, v in enumerate(jogadores):
+    print(f'{k:>4}', end='')
+    for d in v.values():
+        print(f'     {str(d):<7}', end='')
+    print()
 
-print(f' {"cod":<5} {"nome":>6}{"gols":>10} {"total":>15}')
-for c,jogador in enumerate(jogadores):
-    print(f'  {c:<7}{jogador["nome"]:<10}{jogador["gols"]}', end ='')
-    if len(jogador["gols"]) <= espaco:
-        espaco_atual = espaco - len(jogador['gols'])
-        espaco_atual = ' ' * (espaco_atual * 3 )        
-    print(f'{espaco_atual}{jogador["total"]:>5}')
 
+# MENU
 while True:
     mostrar = int(input('Mostrar dados de qual jogador? '))
     print('-='*15)

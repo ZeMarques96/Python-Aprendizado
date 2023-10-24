@@ -1,10 +1,12 @@
 aluno = {}
-aluno['Nome'] = 'José'
-aluno['Média'] = 7.5
-if aluno['Média'] >= 7:
-    aluno['Situação'] = 'Aprovado'
+aluno['nome'] = 'José'
+aluno['média'] = 8
+if aluno['média'] >= 7:
+    aluno['situação'] = 'Aprovado'
+elif 5 <= aluno['média'] <= 7:
+    aluno['situação'] = 'Recuperação'
 else:
-    aluno['Situação'] = 'Reprovado'
+    aluno['situação'] = 'Reprovado'
 
 for chave, valor in aluno.items():
     print(f'{chave}: {valor}')
