@@ -1,25 +1,25 @@
 import time
 
-def contador(i,f,p):
+def contador(inicio,fim,passo):
     
-    if p == 0:
-        p = 1
-    if p < 0:
-        p *= -1
-    print(f'Contagem de {i} até {f} de {p} em {p}: ')
-    if f < i and p > 0:
-        p = p * -1
-        f -= 1
+    if passo == 0:
+        passo = 1
+    if passo < 0:
+        passo *= -1
+    print(f'Contagem de {inicio} até {fim} de {passo} em {passo}: ')
+    if fim < inicio and passo > 0:
+        passo = passo * -1
+        fim -= 1
     else:
-        f += 1
-    for x in range(i,f,p):
+        fim += 1
+    for x in range(inicio,fim,passo):
         print(x, end='..')
         time.sleep(0.2)
     print()
     print('-' * 50)
 
-contador(10,20, 1)
-contador(20,10, 1)
+contador(1,10, 1)
+contador(10,0, 2)
 print('Agora é sua vez de personalizar a contagem!')
 inicio = int(input('Início: '))
 fim = int(input('Fim: '))
