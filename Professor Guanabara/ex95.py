@@ -1,22 +1,6 @@
-# jogadores = [
-#     {
-#         'nome': 'Joel',
-#         'gols': [3, 2],
-#         'total': 5,
-#     },
-#     {
-#         'nome': 'Pedrão',
-#         'gols': [2, 0, 4],
-#         'total': 6,
-#     },
-#     {
-#         'nome': 'Wesley',
-#         'gols': [0, 0, 0, 0],
-#         'total': 0,
-#     },
-# ]
 jogadores = []
 
+# COLETA DE DADOS
 while True:
     jogador = {}
     jogador['nome'] = str(input('Nome do jogador: '))
@@ -40,11 +24,21 @@ while True:
         break
 
 # TABELA
-print(f' {"cod":<5} {"nome":>6}{"gols":>14} {"total":>10}')
+print('cod ', end='')
+for i in jogador.keys():
+    if i != 'nome':
+        print(f'{i:<13}', end='')
+    else:
+        print(f'{i:<15}', end='')
+print()
+
 for k, v in enumerate(jogadores):
-    print(f'{k:>4}', end='')
-    for d in v.values():
-        print(f'     {str(d):<7}', end='')
+    print(f'{k:>2}', end='')
+    for s,d in v.items():
+        if s == 'gols':
+            print(f'  {str(d):<14}', end='')
+        else:
+            print(f'  {str(d):<12}', end='')
     print()
 
 
