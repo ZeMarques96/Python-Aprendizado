@@ -1,7 +1,13 @@
 import time
 
 def contador(inicio,fim,passo):
-    
+    """
+    -> Faz uma contagem e mostra na tela.
+    inicio : início da contagem
+    fim : fim da contagem
+    passo : passo da contagem
+    retrun : sem retorno
+    """
     if passo == 0:
         passo = 1
     if passo < 0:
@@ -17,7 +23,7 @@ def contador(inicio,fim,passo):
         time.sleep(0.2)
     print()
     print('-' * 50)
-
+    
 contador(1,10, 1)
 contador(10,0, 2)
 print('Agora é sua vez de personalizar a contagem!')
