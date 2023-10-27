@@ -1,0 +1,5 @@
+preco = input()
+preco = preco.replace(',', '')
+preco = preco.replace('.', '')
+print(preco)
+print(preco.isalpha())
