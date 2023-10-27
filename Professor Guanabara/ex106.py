@@ -8,6 +8,9 @@ import os
 # cor_reset = "\033[0m"
 
 def chama_help(comando):
+    print('-' * 40)
+    print(f'  Acessando o manual do comando {comando}')
+    print('-' * 40)
     help(comando)
 
 
