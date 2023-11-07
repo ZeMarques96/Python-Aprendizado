@@ -1,2 +1,1 @@
-preco = '54'
-print(f'{preco:.2f}')
+inteiro = float(input(''))
