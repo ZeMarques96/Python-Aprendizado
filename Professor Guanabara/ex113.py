@@ -1,3 +1,4 @@
+# I IDEÁ DESSE EXERCÍCIO FOI FAZER UMA FUNÇÃO PARA TRATAMENTO DE EXCEÇÕES
 
 def tratamentodeExecoes(inteiro, tipo='inteiro'):
     try:
@@ -16,6 +17,10 @@ def tratamentodeExecoes(inteiro, tipo='inteiro'):
     except ValueError:
             erro = 'ValueError, valor digitado é uma string ou um número float'
             return erro
+    except KeyboardInterrupt:
+            erro = KeyboardInterrupt.__name__
+            return erro
+        
 
 def leiaInt():
     while True:
@@ -33,6 +38,11 @@ def leiaFloat():
         resultado = tratamentodeExecoes(numero, 'flutuante')
         if type(resultado) == float:
             break
+        # Não funcionou no code runner
+        if resultado == 'KeyboardInterrupt':  
+             print('O usuário prefiriu não digitar esse número')
+             numero = 0
+             break
         else: print(resultado)
     
     return resultado
