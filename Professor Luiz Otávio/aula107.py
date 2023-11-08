@@ -7,21 +7,24 @@
 # ['BA', 'SP', 'MG', 'RJ']
 # Resultado
 # [('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG')]
+from itertools import zip_longest
+
 
 estados = ['BA', 'SP', 'MG', 'RJ']
 cidades = ['Salvador', 'Ubatuba', 'Belo Horizonte']
 juntos = []
 
 
+def unir_lista(lista1, lista2):
+    tamanho_menor_lista = min(len(lista1), len(lista2))
+    return [
+        (lista1[c], lista2[c]) for c in range(tamanho_menor_lista)
+    ]
 
-def merge_lista(cidades, estados):
-    tamanho_da_menor_lista = min(len(cidades), len(estados))
 
-    for x in range(tamanho_da_menor_lista):
-        cidade = cidades[x]   
-        estado = estados[x]
-        juntos.append((cidade,estado))
-    return juntos
+listas_unidas = unir_lista(cidades, estados)
+print(listas_unidas)
 
-lista_nova = merge_lista(cidades, estados)
-print(lista_nova)
+print(list(zip(cidades, estados)))
+print(list(zip_longest(cidades, estados)))
+print(list(zip_longest(cidades, estados, fillvalue='SEM CIDADE')))
