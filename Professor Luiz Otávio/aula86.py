@@ -21,7 +21,7 @@ lista = [
 ]
 
 novo_dc = {
-    chave: valor 
+    chave: valor
     for chave, valor in lista
 }
 
