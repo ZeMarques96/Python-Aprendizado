@@ -36,8 +36,8 @@ JSON_FILE = os.path.join(BASE_DIR, 'arquivo-python.json')
 
 with open(JSON_FILE, 'r') as file:
     pessoas = json.load(file)
-    
+        
 
-    for pessoa in pessoas:
-        for c, v in pessoa.items():
-            print(c,v)
+    # for pessoa in pessoas:
+    #     for c, v in pessoa.items():
+    #         print(c,v)
