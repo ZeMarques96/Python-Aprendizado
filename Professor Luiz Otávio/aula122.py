@@ -42,9 +42,13 @@ def adicionar(tarefas, acao):
 def listar(tarefas):
     print()
     if not tarefas:
-        print('LISTA DE TAREFAS ESTÁ VAZIA')
-        print()
-        return
+        try:
+            with open('lista_de_tarefas.json', 'r', encoding='utf8') as file:
+                tarefas = json.load(file)
+        except FileNotFoundError:
+            print('LISTA DE TAREFAS ESTÁ VAZIA')
+            print()
+            return
     print('-'*13)
     print(f'{"   TAREFAS"}')
     print('-'*13)
